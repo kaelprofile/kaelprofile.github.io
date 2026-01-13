@@ -620,6 +620,53 @@ body {
     color: var(--color-blood);
 }
 
+/* Story Card with Image */
+.story-card.with-image {
+    grid-column: span 2;
+}
+
+.card-content-with-image {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: flex-start;
+}
+
+.card-content-with-image ul {
+    flex: 1;
+}
+
+.card-content-with-image .card-image {
+    flex: 0 0 180px;
+}
+
+.card-content-with-image .card-image img {
+    width: 100%;
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform var(--transition-medium);
+}
+
+.card-content-with-image .card-image img:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .story-card.with-image {
+        grid-column: span 1;
+    }
+    
+    .card-content-with-image {
+        flex-direction: column;
+    }
+    
+    .card-content-with-image .card-image {
+        flex: none;
+        width: 100%;
+        max-width: 200px;
+        margin: var(--spacing-sm) auto 0;
+    }
+}
+
 .world-details {
     display: grid;
     gap: var(--spacing-sm);
@@ -798,6 +845,53 @@ body {
 
 .detail-block strong.crimson {
     color: var(--color-blood-glow);
+}
+
+/* Detail with Image Layout */
+.detail-with-image {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: flex-start;
+}
+
+.detail-with-image .detail-text {
+    flex: 1;
+}
+
+.detail-with-image .detail-image {
+    flex: 0 0 200px;
+}
+
+.detail-with-image .detail-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    transition: transform var(--transition-medium);
+}
+
+.detail-with-image .detail-image img:hover {
+    transform: scale(1.05);
+}
+
+.detail-with-image.reverse {
+    flex-direction: row-reverse;
+}
+
+@media (max-width: 768px) {
+    .detail-with-image {
+        flex-direction: column;
+    }
+    
+    .detail-with-image.reverse {
+        flex-direction: column;
+    }
+    
+    .detail-with-image .detail-image {
+        flex: none;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto var(--spacing-md);
+    }
 }
 
 /* Personality Bars */
@@ -1132,6 +1226,21 @@ body {
 .greeting-text.final {
     font-size: 1.1rem;
     color: var(--color-blood-glow);
+}
+
+/* Scene Final Image */
+.scene-image-final {
+    margin-top: var(--spacing-lg);
+    text-align: center;
+}
+
+.scene-image-final img {
+    max-width: 100%;
+    max-height: 450px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(139, 0, 0, 0.3);
 }
 
 /* ==========================================
