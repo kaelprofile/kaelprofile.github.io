@@ -2337,6 +2337,7 @@ body {
 
 .nsfw-buttons {
     display: flex;
+    flex-wrap: wrap;
     gap: var(--spacing-sm);
     justify-content: center;
     margin-top: var(--spacing-md);
@@ -2344,11 +2345,14 @@ body {
 
 .nsfw-confirm,
 .nsfw-cancel {
-    padding: 12px 30px;
-    border-radius: 4px;
+    padding: 14px 32px;
+    border-radius: 6px;
     font-family: var(--font-korean);
+    font-size: 1rem;
     cursor: pointer;
     transition: var(--transition-fast);
+    min-width: 140px;
+    text-align: center;
 }
 
 .nsfw-confirm {
@@ -2369,6 +2373,34 @@ body {
 
 .nsfw-cancel:hover {
     border-color: var(--color-gold);
+}
+
+/* NSFW Mobile Styles */
+@media (max-width: 480px) {
+    .nsfw-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .nsfw-confirm,
+    .nsfw-cancel {
+        width: 100%;
+        max-width: 200px;
+        padding: 16px 24px;
+    }
+    
+    .nsfw-warning {
+        padding: var(--spacing-md);
+    }
+    
+    .nsfw-warning h3 {
+        font-size: 1.2rem;
+    }
+    
+    .nsfw-warning p {
+        font-size: 0.9rem;
+    }
 }
 
 .nsfw-content {
